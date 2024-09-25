@@ -77,3 +77,16 @@ post {
 }
 
 
+post {
+    success {
+        mail to: 'surtidhruv9001aus@gmail.com',
+             subject: "Jenkins Pipeline Successful: ${env.JOB_NAME} Build #${env.BUILD_NUMBER}",
+             body: "The Jenkins pipeline ${env.JOB_NAME} build #${env.BUILD_NUMBER} was successful."
+    }
+    failure {
+        mail to: 'surtidhruv9001aus@gmail.com',
+             subject: "Jenkins Pipeline Failed: ${env.JOB_NAME} Build #${env.BUILD_NUMBER}",
+             body: "The Jenkins pipeline ${env.JOB_NAME} build #${env.BUILD_NUMBER} has failed."
+    }
+}
+
